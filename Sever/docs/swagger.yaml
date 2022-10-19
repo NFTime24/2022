@@ -1,0 +1,250 @@
+basePath: /
+definitions:
+  model.ArtistCreateParam:
+    properties:
+      artist_address:
+        type: string
+      artist_name:
+        type: string
+      artist_profile_id:
+        type: string
+    type: object
+  model.ExhibitionCreateParam:
+    properties:
+      description:
+        type: string
+      end_date:
+        type: string
+      file_id:
+        type: string
+      name:
+        type: string
+      start_date:
+        type: string
+    type: object
+  model.LikeCreateParam:
+    properties:
+      user_id:
+        type: string
+      work_id:
+        type: string
+    type: object
+  model.WorkInfoCreateParam:
+    properties:
+      artist_id:
+        type: string
+      file_id:
+        type: string
+      work_category:
+        type: string
+      work_description:
+        type: string
+      work_name:
+        type: string
+      work_price:
+        type: string
+    type: object
+host: 34.212.84.161
+info:
+  contact: {}
+  title: NFTime Sample Swagger API
+  version: "1.0"
+paths:
+  /artist:
+    get:
+      consumes:
+      - application/json
+      description: Get All Artist Info
+      produces:
+      - application/json
+      responses: {}
+      summary: artist info
+      tags:
+      - Artist
+    post:
+      consumes:
+      - application/json
+      description: update artist
+      parameters:
+      - description: artist data
+        in: body
+        name: like
+        required: true
+        schema:
+          $ref: '#/definitions/model.ArtistCreateParam'
+      produces:
+      - application/json
+      responses: {}
+      summary: update artist
+      tags:
+      - Artist
+  /exhibition:
+    get:
+      consumes:
+      - application/json
+      description: Get nft info
+      produces:
+      - application/json
+      responses: {}
+      summary: Get specific NFT
+      tags:
+      - exhibition
+    post:
+      consumes:
+      - application/json
+      description: update exhibition
+      parameters:
+      - description: exhibition data
+        in: body
+        name: like
+        required: true
+        schema:
+          $ref: '#/definitions/model.ExhibitionCreateParam'
+      produces:
+      - application/json
+      responses: {}
+      summary: update exhibition
+      tags:
+      - exhibition
+  /file-upload:
+    post:
+      consumes:
+      - application/json
+      description: Post file
+      parameters:
+      - description: file you want to upload
+        in: formData
+        name: upload_file
+        required: true
+        type: file
+      - description: thumbnail of the file you uploaded
+        in: formData
+        name: thumbnail_file
+        type: file
+      produces:
+      - application/json
+      responses: {}
+      summary: Post File
+      tags:
+      - File
+  /getNFTInfoWithId:
+    get:
+      consumes:
+      - application/json
+      description: Get nft info
+      parameters:
+      - description: nft_id
+        in: query
+        name: nft_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get specific NFT
+      tags:
+      - NFT
+  /getWorksInExhibition:
+    get:
+      consumes:
+      - application/json
+      description: Get work info in Exibition
+      parameters:
+      - description: ex_id
+        in: query
+        name: ex_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get specific Work
+      tags:
+      - NFT
+  /getWorksInfo:
+    get:
+      consumes:
+      - application/json
+      description: Get nft info
+      parameters:
+      - description: ex_id
+        in: query
+        name: ex_id
+        required: true
+        type: string
+      - description: user_id
+        in: query
+        name: user_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get specific NFT
+      tags:
+      - NFT
+  /like:
+    post:
+      consumes:
+      - application/json
+      description: update like
+      parameters:
+      - description: like data
+        in: body
+        name: like
+        required: true
+        schema:
+          $ref: '#/definitions/model.LikeCreateParam'
+      produces:
+      - application/json
+      responses: {}
+      summary: update like
+      tags:
+      - Like
+  /work/specific:
+    get:
+      consumes:
+      - application/json
+      description: Get works
+      parameters:
+      - description: name
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: get specific work
+      tags:
+      - Work
+  /work/top10:
+    get:
+      consumes:
+      - application/json
+      description: get top 10 works
+      produces:
+      - application/json
+      responses: {}
+      summary: get top 10 works
+      tags:
+      - Work
+  /workInfo:
+    post:
+      consumes:
+      - application/json
+      description: update work
+      parameters:
+      - description: work info data
+        in: body
+        name: like
+        required: true
+        schema:
+          $ref: '#/definitions/model.WorkInfoCreateParam'
+      produces:
+      - application/json
+      responses: {}
+      summary: update work
+      tags:
+      - Work
+swagger: "2.0"

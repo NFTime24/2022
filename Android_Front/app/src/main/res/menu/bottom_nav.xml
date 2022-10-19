@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_icon_home_google"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_gallery"
+        android:icon="@drawable/ic_icon_gallery_google"
+        android:title="Gallery" />
+
+    <item
+        android:id="@+id/navigation_collection"
+        android:icon="@drawable/ic_icon_collection_google"
+        android:title="Collection" />
+
+    <item
+        android:id="@+id/navigation_market"
+        android:icon="@drawable/ic_icon_card_giftcard"
+        android:title="Market" />
+
+    <item
+        android:id="@+id/navigation_myPage"
+        android:icon="@drawable/ic_icon_mypage_google"
+        android:title="My Page" />
+
+</menu>

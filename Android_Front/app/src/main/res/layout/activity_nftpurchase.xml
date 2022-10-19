@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NFTPurchaseActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/icon_nftime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="60dp"
+                android:contentDescription="TODO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_nftime" />
+
+<!--
+            <TextView
+                android:id="@+id/tv_purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:letterSpacing="-0.05"
+                android:text="구매하기"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+-->
+
+            <ImageView
+                android:id="@+id/image_nft_info"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/art_deer_1"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_nftime"/>
+
+            <TextView
+                android:id="@+id/tv_nft_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:letterSpacing="-0.05"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toEndOf="@+id/image_nft_info"
+                app:layout_constraintTop_toBottomOf="@+id/icon_nftime" />
+
+            <TextView
+                android:id="@+id/tv_nft_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="NFT artist"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/image_nft_info"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nft_title" />
+
+            <ImageView
+                android:id="@+id/icon_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_icon_won"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintStart_toEndOf="@+id/image_nft_info"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nft_artist" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:letterSpacing="-0.05"
+                android:text="1,000"
+                android:textColor="#216FEA"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/icon_won"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nft_artist" />
+
+            <TextView
+                android:id="@+id/tv_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:letterSpacing="-0.05"
+                android:text="WON"
+                android:textColor="#216FEA"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/tv_price"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nft_artist" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="40dp"
+                android:background="#B5B5B5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_nft_info" />
+
+            <TextView
+                android:id="@+id/tv_contract_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_bold"
+                android:letterSpacing="-0.05"
+                android:text="1. 계약 조건 확인 및 동의"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line1"/>
+
+            <TextView
+                android:id="@+id/tv_contract_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="계약서 상세 내용"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_title" />
+
+            <Button
+                android:id="@+id/btn_contract_check"
+                android:layout_width="296dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_login_round"
+                android:backgroundTint="#216FEB"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="양수도 계약 조건 확인하고 동의하기"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_detail" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="40dp"
+                android:background="#B5B5B5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_contract_check" />
+
+            <TextView
+                android:id="@+id/tv_contract_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_bold"
+                android:letterSpacing="-0.05"
+                android:text="2. 결제 방법 선택"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line2"/>
+
+            <RadioButton
+                android:id="@+id/tv_contract_payment_method1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="결제 방법1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:checked="true"
+                android:buttonTint="#216FEB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_title2"/>
+
+            <TextView
+                android:id="@+id/tv_contract_payment_caution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="계약서 주의사항"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_payment_method1" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="40dp"
+                android:background="#B5B5B5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_payment_caution" />
+
+            <CheckBox
+                android:id="@+id/tv_contract_check1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="[필수] 계약서 체크1"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:buttonTint="#216FEB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line3"/>
+
+            <CheckBox
+                android:id="@+id/tv_contract_check2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="[필수] 계약서 체크2"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:buttonTint="#216FEB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_check1"/>
+
+            <CheckBox
+                android:id="@+id/tv_contract_check3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="[필수] 계약서 체크3"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:buttonTint="#216FEB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_check2"/>
+
+            <CheckBox
+                android:id="@+id/tv_contract_check4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="[필수] 계약서 체크4"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:buttonTint="#216FEB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_check3"/>
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="40dp"
+                android:background="#B5B5B5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_check4" />
+
+            <TextView
+                android:id="@+id/tv_contract_check_caution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:letterSpacing="-0.05"
+                android:text="계약서 주의사항"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp"
+                android:gravity="clip_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contract_check_caution">
+
+                <Button
+                    android:id="@+id/btn_purchase_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_login_round"
+                    android:backgroundTint="#323A3D"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="취소"
+                    android:textColor="#ffffff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_contract3_detail" />
+
+                <Button
+                    android:id="@+id/btn_purchase_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_login_round"
+                    android:backgroundTint="#DAE2E5"
+                    android:backgroundTintMode="src_over"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:text="구매하기"
+                    android:textColor="#ffffff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_contract3_detail" />
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

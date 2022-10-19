@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <title>NFTime</title>
+  </head>
+  <body onload="getUserData();">
+    <div class="scan_modal" style="background-color:white">
+      <div class="title">
+        <span class="titleIn" style="color:black">Please scan the QR code</br>with your phone to login</span>
+      </div>
+      <div class="subtitle">
+        <span class="subtitleIn" style="color:black">please wait for a moment for the request to be completed.</span>
+      </div>
+      <div class="scanImg">
+        <div class="qrcode_sample-1">
+          <!-- <img src= "Img/qrcode_sample@3x.png" width="228px" height="228px"> -->
+          <div id="qrcode"></div>
+        </div>
+      </div>
+      <div class="backBtn">
+        <a href ="index.html">
+            <span class="go-back" style="color:black">Go back</span>
+        </a>
+      </div>
+    </div>
+   
+    <div class="dim_layer"></div>
+    <div class="background_loop"></div>
+
+    <script>
+      function resize(obj) {
+          obj.style.height = "1px";
+          obj.style.height = (12 + obj.scrollHeight) + "px";
+      }
+  
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+          width : 100,
+          height : 100,
+      });
+        const getKlipAccessUrl = (request_key) => {
+          return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+        };
+        const A2P_API_PREPARE_URL =
+          "https://a2a-api.klipwallet.com/v2/a2a/prepare";
+        const APP_NAME = "protocol_camp";
+        const getAddress = (setQrvalue, callback) => {
+          callback=""
+          axios
+            .post(A2P_API_PREPARE_URL, {
+              //prepare
+              bapp: {
+                name: APP_NAME,
+              },
+              type: "auth",
+            })
+            .then((response) => {
+              //request
+              const { request_key } = response.data;
+              console.log(request_key);
+              
+          qrcode.makeCode(getKlipAccessUrl(request_key));
+      
+              // setQrvalue(getKlipAccessUrl(request_key)); //QR code 생성
+              let timerId = setInterval(() => {
+                axios
+                  .get(
+                    //result
+                    `https://a2a-api.klipwallet.com/v2/a2a/result?request_key=${request_key}`
+                  )
+                  .then((res) => {
+                    if (res.data.result) {
+                      console.log(
+                        `[Result] ${JSON.stringify(
+                          res.data.result.klaytn_address
+                        )}`
+                      ); //result에서 받은 결과 값 중 지갑 주소 확인
+                      console.log(res.data.result.klaytn_address);
+                      var walletAddr = res.data.result.klaytn_address;
+                      sessionStorage.setItem("walletAddr", walletAddr)
+                      redirect(walletAddr)
+                      // console.log(res.data);
+                      // console.log("지갑주소: " +res.data.klaytn_address)
+                      // callback(res.data.result.klaytn_address);
+                      clearInterval(timerId);
+                      // setQrvalue("DEFAULT");
+                    }
+                  });
+              }, 1000);
+            });
+        };
+        const getUserData = () => {
+          getAddress("DEFAULT", async (address) => {
+            await setMyAddress(address)
+            await redirect()
+            // console.log(address)
+          });
+        };
+        function button1_click() {
+          getAddress();
+      }
+      function redirect(walletAddr){
+        console.log(walletAddr)
+        // window.location.href = 'https://nftime-server.herokuapp.com/then?addr='+walletAddr
+        window.location.href = 'http://localhost:8080/then?addr='+walletAddr
+      }
+        // getAddress();
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: "http://nftime.gallery",
+          width: 228,
+          height: 228,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H,
+        });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+assets/
+.env
+nohup.out
+reboot_bat.sh

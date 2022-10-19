@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnBoardingFragment.OnBoardingFragment3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_onboarding3_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:letterSpacing="-0.05"
+            android:text="NFT Wallpaper"
+            android:textColor="#0F5FFC"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_onboarding3_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:letterSpacing="-0.05"
+            android:text="언제 어디서든지\n아트 NFT 감상"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_onboarding3_summary"  />
+
+        <TextView
+            android:id="@+id/tv_onboarding3_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="36dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:letterSpacing="-0.05"
+            android:text="내가 좋아하는 NFT 작품을\n디바이스 배경으로 설정해봐요!"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_onboarding3_title" />
+
+        <ImageView
+            android:id="@+id/img_klip_onboarding"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/img_nftfandom_en"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_onboarding3_detail" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="280dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/btn_login_round"
+            android:backgroundTint="#216FEA"
+            android:drawableLeft="@drawable/mypage_btn_icon_klip"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp"
+            android:text="Klip으로 로그인"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_klip_onboarding" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,372 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "NFTime Sample Swagger API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "34.212.84.161",
+    "basePath": "/",
+    "paths": {
+        "/artist": {
+            "get": {
+                "description": "Get All Artist Info",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artist"
+                ],
+                "summary": "artist info",
+                "responses": {}
+            },
+            "post": {
+                "description": "update artist",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Artist"
+                ],
+                "summary": "update artist",
+                "parameters": [
+                    {
+                        "description": "artist data",
+                        "name": "like",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.ArtistCreateParam"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/exhibition": {
+            "get": {
+                "description": "Get nft info",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "exhibition"
+                ],
+                "summary": "Get specific NFT",
+                "responses": {}
+            },
+            "post": {
+                "description": "update exhibition",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "exhibition"
+                ],
+                "summary": "update exhibition",
+                "parameters": [
+                    {
+                        "description": "exhibition data",
+                        "name": "like",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.ExhibitionCreateParam"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/file-upload": {
+            "post": {
+                "description": "Post file",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "File"
+                ],
+                "summary": "Post File",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "file you want to upload",
+                        "name": "upload_file",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "thumbnail of the file you uploaded",
+                        "name": "thumbnail_file",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/getNFTInfoWithId": {
+            "get": {
+                "description": "Get nft info",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "NFT"
+                ],
+                "summary": "Get specific NFT",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "nft_id",
+                        "name": "nft_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/getWorksInExhibition": {
+            "get": {
+                "description": "Get work info in Exibition",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "NFT"
+                ],
+                "summary": "Get specific Work",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ex_id",
+                        "name": "ex_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/getWorksInfo": {
+            "get": {
+                "description": "Get nft info",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "NFT"
+                ],
+                "summary": "Get specific NFT",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ex_id",
+                        "name": "ex_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "user_id",
+                        "name": "user_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/like": {
+            "post": {
+                "description": "update like",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Like"
+                ],
+                "summary": "update like",
+                "parameters": [
+                    {
+                        "description": "like data",
+                        "name": "like",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.LikeCreateParam"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/work/specific": {
+            "get": {
+                "description": "Get works",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Work"
+                ],
+                "summary": "get specific work",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "name",
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/work/top10": {
+            "get": {
+                "description": "get top 10 works",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Work"
+                ],
+                "summary": "get top 10 works",
+                "responses": {}
+            }
+        },
+        "/workInfo": {
+            "post": {
+                "description": "update work",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Work"
+                ],
+                "summary": "update work",
+                "parameters": [
+                    {
+                        "description": "work info data",
+                        "name": "like",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.WorkInfoCreateParam"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "model.ArtistCreateParam": {
+            "type": "object",
+            "properties": {
+                "artist_address": {
+                    "type": "string"
+                },
+                "artist_name": {
+                    "type": "string"
+                },
+                "artist_profile_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.ExhibitionCreateParam": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "file_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "start_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.LikeCreateParam": {
+            "type": "object",
+            "properties": {
+                "user_id": {
+                    "type": "string"
+                },
+                "work_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.WorkInfoCreateParam": {
+            "type": "object",
+            "properties": {
+                "artist_id": {
+                    "type": "string"
+                },
+                "file_id": {
+                    "type": "string"
+                },
+                "work_category": {
+                    "type": "string"
+                },
+                "work_description": {
+                    "type": "string"
+                },
+                "work_name": {
+                    "type": "string"
+                },
+                "work_price": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
